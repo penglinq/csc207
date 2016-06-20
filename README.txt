@@ -1,1 +1,1 @@
-All the files contained in this repository is for Linqing's study of CSC207.
+Files contained in this repository are for Linqing's study of CSC207.
