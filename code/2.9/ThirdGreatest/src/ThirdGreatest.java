@@ -11,6 +11,11 @@ public class ThirdGreatest {
 		return;
 	}
 	
+	/**loop invariant used here:
+	 * max[0], max[1], max[2] hold the largest, second largest, and 
+	 * the third largest numbers among the first i numbers in the 
+	 * array of integer arr
+	 */
 	public static int thirdGreatest(int[] arr) {
 		int[] max = new int[10];
 		if (arr.length < 1) {
