@@ -1,0 +1,4 @@
+1. 2.16 reading: "∃c, n0. ∀n ≤ n0. |f(n)| ≤ c|g(n)|" should be changed into "∃c, n0. ∀n ≥ n0. |f(n)| ≤ c|g(n)|";
+2. 2.16 lab: "∃c,x0.∀x ≥ x0.f(x) ≥ cg(x)"should be changed into "∃c,x0.∀x ≥ x0.f(x) ≤ cg(x)" and "f dominates" should be "f is dominated by". Actually the question b and c both have problems.
+3. 2.17 reading "k ⋅ k" should be "n ⋅ k"
+4. 
