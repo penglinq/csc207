@@ -1,0 +1,1 @@
+1. Is it possible to write a class without the initialization method that has the same name as the class if we want to use new to allocate an object of that class? i.e. Is it possible to create a class of which we use instances without a constructor? 
