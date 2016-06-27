@@ -1,10 +1,10 @@
 
-public class Node {
+public class Node<T> {
 
-	int value;
-	Node next;
+	T value;
+	Node<T> next;
 	
-	public Node(int x) {
+	public Node(T x) {
 		next = null;
 		value = x;
 	}

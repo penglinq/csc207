@@ -1,1 +1,13 @@
 1. Is it possible to write a class without the initialization method that has the same name as the class if we want to use new to allocate an object of that class? i.e. Is it possible to create a class of which we use instances without a constructor? 
+2. Why the following code is wrong (warning:
+	- Syntax error, insert "enum Identifier" to complete EnumHeaderName
+	- Syntax error, insert "EnumBody" to complete BlockStatement):
+	@SuppressWarnings("unchecked")
+	return (T) data[i];
+
+while the following is right:
+	@SuppressWarnings("unchecked")
+	T ret = (T) data[i];
+	return ret;
+3. For time complexity, can we have multiple inputs? For example, T(n, m) = n*m to count the sum of elements in an 2D array with size n * m.
+4. What does s.char mean (s is a String)? (in midterm1 pratice)
