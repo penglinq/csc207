@@ -11,3 +11,4 @@ while the following is right:
 	return ret;
 3. For time complexity, can we have multiple inputs? For example, T(n, m) = n*m to count the sum of elements in an 2D array with size n * m.
 4. What does s.char mean (s is a String)? (in midterm1 pratice)
+5. 3.7 reading last page: I don't understand the in & out parameter and how they are related to the super and extend.
