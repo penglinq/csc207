@@ -1,21 +1,17 @@
 package edu.grinnell.sortingvisualizer.events;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-public class SwapEvent<T extends Comparable<T>> implements SortEvent<T> {
+public class CompareEvent<T extends Comparable<T>> implements SortEvent<T> {
 
 	int index1, index2;
 	
-	public SwapEvent(int a, int b) {
+	public CompareEvent(int a, int b) {
 		index1 = a;
 		index2 = b;
 	}
 	
 	public void apply(T[] arr) {
-		T temp = arr[index1];
-		arr[index1] = arr[index2];
-		arr[index2] = temp;
 		return;
 	}
 	
@@ -27,7 +23,7 @@ public class SwapEvent<T extends Comparable<T>> implements SortEvent<T> {
 	}
 	
 	public boolean isEmphasized() {
-		return true;
+		return false;
 	}
 	
 

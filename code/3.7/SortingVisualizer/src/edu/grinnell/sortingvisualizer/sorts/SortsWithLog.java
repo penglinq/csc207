@@ -1,6 +1,9 @@
 package edu.grinnell.sortingvisualizer.sorts;
+import java.util.*;
 
-public class Sorts {
+import edu.grinnell.sortingvisualizer.events.*;
+
+public class SortsWithLog {
 
 	public static <T extends Comparable<T>> void swap(T[] arr, int i, int j) {
 		T temp = arr[i];
@@ -9,70 +12,87 @@ public class Sorts {
 		return;
 	}
 	
-	public static <T extends Comparable<T>> void selectionSort(T[] arr) {
+	@SuppressWarnings("unchecked")
+	public static <T extends Comparable<T>> List<SortEvent<T>> selectionSort(T[] arr) {
 		int minIndex;
+		List<SortEvent<T>> l = new LinkedList<SortEvent<T>>();
 		for (int i = 0; i < arr.length; i++) {
 			minIndex = i;
 			for (int j = i + 1; j < arr.length; j++) {
+				l.add(new CompareEvent<T>(minIndex, j));
 				if 	(arr[minIndex].compareTo(arr[j]) > 0) {
 					minIndex = j;
 				}
 			}
+			l.add(new SwapEvent<T>(i, minIndex));
 			swap(arr, i, minIndex);
 		}
-		return;
+		return l;
 	}
 	
-	public static <T extends Comparable<T>> void insertionSort(T[] arr) {
+	public static <T extends Comparable<T>> List<SortEvent<T>> insertionSort(T[] arr) {
+		List<SortEvent<T>> l = new LinkedList<SortEvent<T>>();
 		for (int i = 1; i < arr.length; i++) {
 			for (int j = 0; j < i; j++) {
-				if (arr[i].compareTo(arr[j]) < 0) { swap(arr, i, j);}
+				l.add(new CompareEvent<T>(i, j));
+				if (arr[i].compareTo(arr[j]) < 0) { 
+					l.add(new SwapEvent<T>(i, j));
+					swap(arr, i, j);}
 			}
 		}
-		return;
+		return l;
 	}
 	
-	public static <T extends Comparable<T>> void bubbleSort(T[] arr) {
+	public static <T extends Comparable<T>> List<SortEvent<T>> bubbleSort(T[] arr) {
 		boolean f;
+		List<SortEvent<T>> l = new LinkedList<SortEvent<T>>();
 		for (int i = 0; i < arr.length; i++) {
 			f = true;
 			for (int j = arr.length - 1; j > i; j--) {
+				l.add(new CompareEvent<T>(i, j));
 				if (arr[j].compareTo(arr[j-1]) < 0) { 
+					l.add(new SwapEvent<T>(j, j-1));
 					swap(arr, j, j-1);
 					f = false;
 				}
 			}
 			if (f)	break;
 		}
-		return;
+		return l;
 	}
 	
-	public static <T extends Comparable<T>> void mergeSort(T[] arr, int low, int high) {
-		if (high - low < 2) return;
-		mergeSort(arr, low, (low + high) / 2);
-		mergeSort(arr, (low + high) / 2, high);
+	public static <T extends Comparable<T>> List<SortEvent<T>> mergeSort(T[] arr, int low, int high) {
+		List<SortEvent<T>> l = new LinkedList<SortEvent<T>>();
+		if (high - low < 2) return l;
+		l.addAll(mergeSort(arr, low, (low + high) / 2));
+		l.addAll(mergeSort(arr, (low + high) / 2, high));
 		Object[] temp = new Object[high - low];
 		int left = low, right = (low + high) / 2, front = 0;
 		while ((left != (low + high) / 2) && (right != high)) {
+			l.add(new CompareEvent<T>(left, right));
 			if (arr[left].compareTo(arr[right]) > 0) {
+				l.add(new CopyEvent<T>(arr[right], front));
 				temp[front++] = arr[right++];
 			} else { temp[front++] = arr[left++]; }
 		}
 		if (left != (low + high) / 2) {
 			for (int i = left; i < (low + high) / 2; i++) {
+				l.add(new CopyEvent<T>(arr[i], front));
 				temp[front++] = arr[i];
 			}
 		} else if (right != high) {
 			for (int i = right; i < high; i++) {
+				l.add(new CopyEvent<T>(arr[i], front));
 				temp[front++] = arr[i];
 			}
 		}
 		for (int i = 0; i < high - low; i++) {
 			@SuppressWarnings("unchecked")
 			T k = (T) temp[i];
+			l.add(new CopyEvent<T>(k, i + low));
 			arr[i + low] = k;
 		}
-		return;
+		return l;
 	}
 	
 	public static <T extends Comparable<T>> void quickSort(T[] arr, int low, int high) {
