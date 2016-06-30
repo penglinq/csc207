@@ -1,4 +1,5 @@
 import static org.junit.Assert.*;
+import java.util.*;
 
 import org.junit.Test;
 
@@ -19,5 +20,23 @@ public class ArrayListTest {
 		l.clear();
 		assertEquals("The size becomes 0 after clearing", 0,l.size());
 	}
+	
+	@Test
+	public void iteratorTest() {
+		ArrayList<Character> l = new ArrayList<Character>();
+		char[] arr = {'a', 'b', 'c', 'd', 'e', 'f'};
+		for (int i = 0; i < arr.length; i++) {
+			l.add(arr[i]);
+		}
+		for(Character c: l) {
+			System.out.print(" " + c + " ");
+		}
+		/*Iterator<Character> iter = l.iterator();
+		while (iter.hasNext()) {
+			System.out.print(" " + iter.next() + " ");
+		}*/
+	}
+	
+	
 
 }

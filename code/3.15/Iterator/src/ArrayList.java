@@ -1,6 +1,7 @@
 import java.util.Arrays;
+import java.util.*;
 
-public class ArrayList<T> implements List<T> {
+public class ArrayList<T> implements List<T>, Iterable<T> {
 	
 	public Object[] data;
 	public int last;
@@ -41,6 +42,11 @@ public class ArrayList<T> implements List<T> {
 	
 	public void clear() {
 		last = 0;
+	}
+	
+	public Iterator<T> iterator() {
+		Iterator<T> iter = new ArrayListIterator<T>(data, last);
+		return iter;
 	}
 	
 }
