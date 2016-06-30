@@ -131,10 +131,10 @@ public class SortsWithLog {
 			}
 			if (left < right) { l.add(new CompareEvent<T>(right, high - 1)); }
 			if (left < right) { 
-				l.add(new SwapEvent<T>(key, high - 1));
+				l.add(new SwapEvent<T>(left, right));
 				swap(arr, left, right);
 			} else { 
-				l.add(new SwapEvent<T>(key, high - 1));
+				l.add(new SwapEvent<T>(left, high - 1));
 				swap(arr, left, high - 1); 
 				break;
 			}
