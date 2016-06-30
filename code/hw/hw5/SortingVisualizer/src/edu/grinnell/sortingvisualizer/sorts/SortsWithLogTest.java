@@ -16,26 +16,17 @@ public class SortsWithLogTest {
 		Character[] arr2 = {'f', 'e', 'd', 'c', 'b', 'a'}, arr2cp = Arrays.copyOf(arr2, arr2.length);
 		Character[] arr3 = {'f', 'b', 'a', 'd', 'e', 'c'}, arr3cp = Arrays.copyOf(arr3, arr3.length);
 		LinkedList<SortEvent<Character>> l1 = SortsWithLog.selectionSort(arr1);
-		while (l1.size() > 0) {
-			l1.getFirst().apply(arr1cp);
-			l1.remove();
-		}
+		SortsWithLog.eventSort(arr1cp, l1);
 		for (int i = 0; i < arr1.length; i++)  { 
 			assertEquals("arr1#"+i, arr1cp[i] , arr1[i]);
 		}
 		LinkedList<SortEvent<Character>> l2 = SortsWithLog.selectionSort(arr2);
-		while (l2.size() > 0) {
-			l2.getFirst().apply(arr2cp);
-			l2.remove();
-		}
+		SortsWithLog.eventSort(arr2cp, l2);
 		for (int i = 0; i < arr1.length; i++)  { 
 			assertEquals("arr2#"+i, arr2cp[i] , arr2[i]);
 		}
 		LinkedList<SortEvent<Character>> l3 = SortsWithLog.selectionSort(arr3);
-		while (l3.size() > 0) {
-			l3.getFirst().apply(arr3cp);
-			l3.remove();
-		}
+		SortsWithLog.eventSort(arr3cp, l3);
 		for (int i = 0; i < arr1.length; i++)  { 
 			assertEquals("arr3#"+i, arr3cp[i] , arr3[i]);
 		}
@@ -47,26 +38,17 @@ public class SortsWithLogTest {
 		Character[] arr2 = {'f', 'e', 'd', 'c', 'b', 'a'}, arr2cp = Arrays.copyOf(arr2, arr2.length);
 		Character[] arr3 = {'f', 'b', 'a', 'd', 'e', 'c'}, arr3cp = Arrays.copyOf(arr3, arr3.length);
 		LinkedList<SortEvent<Character>> l1 = SortsWithLog.insertionSort(arr1);
-		while (l1.size() > 0) {
-			l1.getFirst().apply(arr1cp);
-			l1.remove();
-		}
+		SortsWithLog.eventSort(arr1cp, l1);
 		for (int i = 0; i < arr1.length; i++)  { 
 			assertEquals("arr1#"+i, arr1cp[i] , arr1[i]);
 		}
 		LinkedList<SortEvent<Character>> l2 = SortsWithLog.insertionSort(arr2);
-		while (l2.size() > 0) {
-			l2.getFirst().apply(arr2cp);
-			l2.remove();
-		}
+		SortsWithLog.eventSort(arr2cp, l2);
 		for (int i = 0; i < arr1.length; i++)  { 
 			assertEquals("arr2#"+i, arr2cp[i] , arr2[i]);
 		}
 		LinkedList<SortEvent<Character>> l3 = SortsWithLog.insertionSort(arr3);
-		while (l3.size() > 0) {
-			l3.getFirst().apply(arr3cp);
-			l3.remove();
-		}
+		SortsWithLog.eventSort(arr3cp, l3);
 		for (int i = 0; i < arr1.length; i++)  { 
 			assertEquals("arr3#"+i, arr3cp[i] , arr3[i]);
 		}
@@ -78,26 +60,17 @@ public class SortsWithLogTest {
 		Character[] arr2 = {'f', 'e', 'd', 'c', 'b', 'a'}, arr2cp = Arrays.copyOf(arr2, arr2.length);
 		Character[] arr3 = {'f', 'b', 'a', 'd', 'e', 'c'}, arr3cp = Arrays.copyOf(arr3, arr3.length);
 		LinkedList<SortEvent<Character>> l1 = SortsWithLog.bubbleSort(arr1);
-		while (l1.size() > 0) {
-			l1.getFirst().apply(arr1cp);
-			l1.remove();
-		}
+		SortsWithLog.eventSort(arr1cp, l1);
 		for (int i = 0; i < arr1.length; i++)  { 
 			assertEquals("arr1#"+i, arr1cp[i] , arr1[i]);
 		}
 		LinkedList<SortEvent<Character>> l2 = SortsWithLog.bubbleSort(arr2);
-		while (l2.size() > 0) {
-			l2.getFirst().apply(arr2cp);
-			l2.remove();
-		}
+		SortsWithLog.eventSort(arr2cp, l2);
 		for (int i = 0; i < arr1.length; i++)  { 
 			assertEquals("arr2#"+i, arr2cp[i] , arr2[i]);
 		}
 		LinkedList<SortEvent<Character>> l3 = SortsWithLog.bubbleSort(arr3);
-		while (l3.size() > 0) {
-			l3.getFirst().apply(arr3cp);
-			l3.remove();
-		}
+		SortsWithLog.eventSort(arr3cp, l3);
 		for (int i = 0; i < arr1.length; i++)  { 
 			assertEquals("arr3#"+i, arr3cp[i] , arr3[i]);
 		}
@@ -108,26 +81,17 @@ public class SortsWithLogTest {
 		Character[] arr2 = {'f', 'e', 'd', 'c', 'b', 'a'}, arr2cp = Arrays.copyOf(arr2, arr2.length);
 		Character[] arr3 = {'f', 'b', 'a', 'd', 'e', 'c'}, arr3cp = Arrays.copyOf(arr3, arr3.length);
 		LinkedList<SortEvent<Character>> l1 = SortsWithLog.mergeSort(arr1, 0, arr1.length);
-		while (l1.size() > 0) {
-			l1.getFirst().apply(arr1cp);
-			l1.remove();
-		}
+		SortsWithLog.eventSort(arr1cp, l1);
 		for (int i = 0; i < arr1.length; i++)  { 
 			assertEquals("arr1#"+i, arr1cp[i] , arr1[i]);
 		}
 		LinkedList<SortEvent<Character>> l2 = SortsWithLog.mergeSort(arr2, 0, arr1.length);
-		while (l2.size() > 0) {
-			l2.getFirst().apply(arr2cp);
-			l2.remove();
-		}
+		SortsWithLog.eventSort(arr2cp, l2);
 		for (int i = 0; i < arr1.length; i++)  { 
 			assertEquals("arr2#"+i, arr2cp[i] , arr2[i]);
 		}
 		LinkedList<SortEvent<Character>> l3 = SortsWithLog.mergeSort(arr3, 0, arr1.length);
-		while (l3.size() > 0) {
-			l3.getFirst().apply(arr3cp);
-			l3.remove();
-		}
+		SortsWithLog.eventSort(arr3cp, l3);
 		for (int i = 0; i < arr1.length; i++)  { 
 			assertEquals("arr3#"+i, arr3cp[i] , arr3[i]);
 		}
@@ -139,26 +103,17 @@ public class SortsWithLogTest {
 		Character[] arr2 = {'f', 'e', 'd', 'c', 'b', 'a'}, arr2cp = Arrays.copyOf(arr2, arr2.length);
 		Character[] arr3 = {'f', 'b', 'a', 'd', 'e', 'c'}, arr3cp = Arrays.copyOf(arr3, arr3.length);
 		LinkedList<SortEvent<Character>> l1 = SortsWithLog.quickSort(arr1, 0, arr1.length);
-		while (l1.size() > 0) {
-			l1.getFirst().apply(arr1cp);
-			l1.remove();
-		}
+		SortsWithLog.eventSort(arr1cp, l1);
 		for (int i = 0; i < arr1.length; i++)  { 
 			assertEquals("arr1#"+i, arr1cp[i] , arr1[i]);
 		}
 		LinkedList<SortEvent<Character>> l2 = SortsWithLog.quickSort(arr2, 0, arr1.length);
-		while (l2.size() > 0) {
-			l2.getFirst().apply(arr2cp);
-			l2.remove();
-		}
+		SortsWithLog.eventSort(arr2cp, l2);
 		for (int i = 0; i < arr1.length; i++)  { 
 			assertEquals("arr2#"+i, arr2cp[i] , arr2[i]);
 		}
 		LinkedList<SortEvent<Character>> l3 = SortsWithLog.quickSort(arr3, 0, arr1.length);
-		while (l3.size() > 0) {
-			l3.getFirst().apply(arr3cp);
-			l3.remove();
-		}
+		SortsWithLog.eventSort(arr3cp, l3);
 		for (int i = 0; i < arr1.length; i++)  { 
 			assertEquals("arr3#"+i, arr3cp[i] , arr3[i]);
 		}
@@ -173,10 +128,7 @@ public class SortsWithLogTest {
 			}
 			Integer[] arrcp = Arrays.copyOf(arr, arr.length);
 			LinkedList<SortEvent<Integer>> l = SortsWithLog.quickSort(arr, 0, arr.length);
-			while (l.size() > 0) {
-				l.getFirst().apply(arrcp);
-				l.remove();
-			}
+			SortsWithLog.eventSort(arrcp, l);
 			for (int j = 0; j < i; j++){
 				assertEquals("#"+i+"#"+j, arr[j], arrcp[j]);
 			}
@@ -192,10 +144,7 @@ public class SortsWithLogTest {
 			}
 			Integer[] arrcp = Arrays.copyOf(arr, arr.length);
 			LinkedList<SortEvent<Integer>> l = SortsWithLog.mergeSort(arr, 0, arr.length);
-			while (l.size() > 0) {
-				l.getFirst().apply(arrcp);
-				l.remove();
-			}
+			SortsWithLog.eventSort(arrcp, l);
 			for (int j = 0; j < i; j++){
 				assertEquals("#"+i+"#"+j, arr[j], arrcp[j]);
 			}
@@ -211,10 +160,7 @@ public class SortsWithLogTest {
 			}
 			Integer[] arrcp = Arrays.copyOf(arr, arr.length);
 			LinkedList<SortEvent<Integer>> l = SortsWithLog.bubbleSort(arr);
-			while (l.size() > 0) {
-				l.getFirst().apply(arrcp);
-				l.remove();
-			}
+			SortsWithLog.eventSort(arrcp, l);
 			for (int j = 0; j < i; j++){
 				assertEquals("#"+i+"#"+j, arr[j], arrcp[j]);
 			}
@@ -230,10 +176,7 @@ public class SortsWithLogTest {
 			}
 			Integer[] arrcp = Arrays.copyOf(arr, arr.length);
 			LinkedList<SortEvent<Integer>> l = SortsWithLog.insertionSort(arr);
-			while (l.size() > 0) {
-				l.getFirst().apply(arrcp);
-				l.remove();
-			}
+			SortsWithLog.eventSort(arrcp, l);
 			for (int j = 0; j < i; j++){
 				assertEquals("#"+i+"#"+j, arr[j], arrcp[j]);
 			}
@@ -249,10 +192,7 @@ public class SortsWithLogTest {
 			}
 			Integer[] arrcp = Arrays.copyOf(arr, arr.length);
 			LinkedList<SortEvent<Integer>> l = SortsWithLog.selectionSort(arr);
-			while (l.size() > 0) {
-				l.getFirst().apply(arrcp);
-				l.remove();
-			}
+			SortsWithLog.eventSort(arrcp, l);
 			for (int j = 0; j < i; j++){
 				assertEquals("#"+i+"#"+j, arr[j], arrcp[j]);
 			}

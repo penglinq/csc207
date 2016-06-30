@@ -144,4 +144,11 @@ public class SortsWithLog {
 		return l;
 	}
 	
+	public static <T extends Comparable<T>> void eventSort(T[] arr, LinkedList<SortEvent<T>> event) {
+		while (event.size() > 0) {
+			event.getFirst().apply(arr);
+			event.remove();
+		}
+	}
+	
 }
