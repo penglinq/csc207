@@ -12,3 +12,5 @@ while the following is right:
 3. For time complexity, can we have multiple inputs? For example, T(n, m) = n*m to count the sum of elements in an 2D array with size n * m.
 4. What does s.char mean (s is a String)? (in midterm1 pratice)
 5. 3.7 reading last page: I don't understand the in & out parameter and how they are related to the super and extend.
+6. 3.16 lab : For "map" (first part) in the file HigherOrderFunctionsQ.java, I want to make one function class for all the three cases, just differed by the input type. Is that possible? If so, how can I make a generic type that only contains Integer, Double, String, i.e. the three concrete types I will use? (Otherwise I will have to implement for other types since I implement the interface Function) 
+Also, how to "come up with a function that factors out the redundant structure from these three functions" for "Fold"?
