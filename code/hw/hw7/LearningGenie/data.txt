@@ -1,0 +1,7 @@
+##Does it bark?
+#Does it get along with humans?
+Dog
+fox
+##Does it have whiskers?
+Cat
+Giraffe
