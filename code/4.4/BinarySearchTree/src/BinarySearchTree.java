@@ -117,56 +117,51 @@ public class BinarySearchTree<T extends Comparable<T>> {
 	
 	public boolean remove(T v) {
 		if (root == null) { return false;}
-		Node n = root, npre = root;
+		Node current = root, parent = root;
 		if (root.value == v) {
 			if (root.left == null || root.right == null) {
-				if (root.left == null) { root = root.right;}
-				else { root = root.left;}
+				root = (root.left != null)? root.left : root.right;
 			} else {
-				Node n2 = root.right, npre2 = root;
-				while (n2.left != null) {
-					npre2 = n2;
-					n2 = n2.left;
+				current = root.right;
+				while (current.left != null) {
+					parent = current;
+					current = current.left;
 				}
-				root.value = n2.value;
-				npre2.left = n2.right;
+				root.value = current.value;
+				parent.left = current.right;
 			}
 		}
 		else {
-			while (n.value != v) {
-				if (n.value.compareTo(v) > 0 && n.left != null) {
-					npre = n;
-					n = n.left;}
+			boolean isLeftChild = true;
+			while (current.value != v) {
+				if (current.value.compareTo(v) > 0 && current.left != null) {
+					parent = current;
+					current = current.left;}
 				else {
-					if (n.value.compareTo(v) <= 0 && n.right != null) { 
-						npre = n;
-						n = n.right;}
+					if (current.value.compareTo(v) <= 0 && current.right != null) { 
+						parent = current;
+						current = current.right;
+						isLeftChild = false; }
 					else return false;
 				}
 			}
-			if (n.left == null) {
-				if (n.right == null) {
-					if (npre.left == n) { npre.left = null;}
-					else { npre.right = null;}
-				} else {
-					if (npre.left == n) { npre.left = n.right;}
-					else { npre.right = n.right;}
-				}
-			} else if (n.right == null) {
-				if (npre.left == n) { npre.left = n.left;}
-				else {npre.right = n.left;}
+			if (current.left == null || current.right == null) {
+				if (isLeftChild) { parent.left = (current.left != null)? current.left : current.right;}
+				else { parent.right = (current.left != null)? current.left : current.right;}
 			} else {
-				Node n2 = n.right, npre2 = n;
-				while (n2.left != null) {
-					npre2 = n2;
-					n2 = n2.left;
+				Node current2 = current.right, parent2 = current;
+				while (current2.left != null) {
+					parent2 = current2;
+					current2 = current2.left;
 				}
-				n.value = n2.value;
-				npre2.left = n2.right;
+				current.value = current2.value;
+				parent2.left = current2.right;
 			}
 		}
 		return true;
 	}
+	
+	
 	
 	
 }
