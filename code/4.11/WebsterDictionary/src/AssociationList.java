@@ -2,7 +2,7 @@ import java.util.*;
 
 public class AssociationList  {
 
-	List<Pair> pList;	
+	public List<Pair> pList;	
 	
 	public AssociationList() {
 		pList = new LinkedList<Pair>();
