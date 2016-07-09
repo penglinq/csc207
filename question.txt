@@ -17,3 +17,4 @@ while the following is right:
 Also, how to "come up with a function that factors out the redundant structure from these three functions" for "Fold"?
 8. How to handle the resource leak, e.g. to close a Scanner? Add "@SuppressWarnings("resource")"?
 9. 4.18 lab: how to do part2? I solved this with TreeSet<Pair> but it seems that I didn't get the intention of this question.
+10. Just to make sure, is queue FILO? or FIFO? And stack is FILO, right?
