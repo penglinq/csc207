@@ -20,4 +20,5 @@ Also, how to "come up with a function that factors out the redundant structure f
 9. 4.18 lab: how to do part2? I solved this with TreeSet<Pair> but it seems that I didn't get the intention of this question.
 10. Just to make sure, is queue FILO? or FIFO? And stack is FILO, right?
 11. How to use try-catch to handle "Exceptions"?
+12. HW9: Is the HuffmanTree wrong? Because when there are only 5 and 4 left in the priority queue, 4 should be in front of 5. Then all the huffman codes should change accordingly.
 
