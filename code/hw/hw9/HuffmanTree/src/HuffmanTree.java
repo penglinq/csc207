@@ -50,20 +50,22 @@ public class HuffmanTree {
 		return;
 	}
 	
-	public void decode(BitInputStream in, BitOutputStream out) {
+	public void decode(BitInputStream in, BitOutputStream out, int numOfCode) { //To avoid the extra '0' at the end
 		Node current = root;
 		int x;
-		while (in.hasBits()) {
+		while (in.hasBits() && numOfCode > 0) {
 			x = in.readBit();
 			if (x == 0) current = ((InternalNode)current).left;
 			else current = ((InternalNode)current).right;
 			if (current.isLeaf()) {
 				if (((LeafNode)current).value.fst != 256) {
 					out.writeBits(((LeafNode)current).value.fst, 8);
+					numOfCode--;
 				} 
 				current = root;
 			}
 		}
+		out.close();
 	}
 	
 }

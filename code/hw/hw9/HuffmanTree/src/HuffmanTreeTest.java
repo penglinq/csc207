@@ -30,6 +30,6 @@ public class HuffmanTreeTest {
 		huff.encode(in, midout);
 		BitInputStream midin = new BitInputStream("midput1.txt");
 		BitOutputStream out = new BitOutputStream("output1.txt");
-		huff.decode(midin, out);
+		huff.decode(midin, out, 8);
 	}
 }
