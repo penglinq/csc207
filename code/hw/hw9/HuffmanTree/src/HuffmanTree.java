@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PriorityQueue;
 
 public class HuffmanTree {
 
@@ -42,26 +44,28 @@ public class HuffmanTree {
 			 x = in.readBits(8);
 			 s = map.get(x);
 			 for (int i = 0; i < s.length(); i++) {
-				if (s.charAt(i) == '0') out.writeBit(0);
-				else out.writeBit(1);
+				out.writeBit(new Integer(s.substring(i, i+1)));
 			 }
+		}
+		s = map.get(256);
+		for (int i = 0; i < s.length(); i++) {
+			out.writeBit(new Integer(s.substring(i, i+1)));
 		}
 		out.close();
 		return;
 	}
 	
-	public void decode(BitInputStream in, BitOutputStream out, int numOfCode) { //To avoid the extra '0' at the end
+	public void decode(BitInputStream in, BitOutputStream out) {
 		Node current = root;
 		int x;
-		while (in.hasBits() && numOfCode > 0) {
+		while (in.hasBits()) {
 			x = in.readBit();
 			if (x == 0) current = ((InternalNode)current).left;
 			else current = ((InternalNode)current).right;
 			if (current.isLeaf()) {
 				if (((LeafNode)current).value.fst != 256) {
 					out.writeBits(((LeafNode)current).value.fst, 8);
-					numOfCode--;
-				} 
+				} else break;
 				current = root;
 			}
 		}

@@ -1,7 +1,6 @@
-import static org.junit.Assert.*;
-
 import java.io.IOException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.junit.Test;
 
@@ -23,6 +22,7 @@ public class HuffmanTreeTest {
 		m.put((short)32, 2);
 		m.put((short)98, 2);
 		m.put((short)122, 1);
+		m.put((short)10, 1);
 		HuffmanTree huff = new HuffmanTree(m);
 		preOrder(huff.root);
 		BitInputStream in = new BitInputStream("input1.txt");
@@ -30,6 +30,6 @@ public class HuffmanTreeTest {
 		huff.encode(in, midout);
 		BitInputStream midin = new BitInputStream("midput1.txt");
 		BitOutputStream out = new BitOutputStream("output1.txt");
-		huff.decode(midin, out, 8);
+		huff.decode(midin, out);
 	}
 }

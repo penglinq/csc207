@@ -1,4 +1,5 @@
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 /**
  * A BitInputStream reads a file bit-by-bit.
@@ -20,7 +21,7 @@ public class BitInputStream {
     }
 
     /** @return true iff the stream has bits left to produce */
-    public boolean hasBits() { return digits != 10 && digits != -1; }
+    public boolean hasBits() { return digits != -1; }
 
     /**
      * Reads a bit from the stream in big-endian order (msb first)
