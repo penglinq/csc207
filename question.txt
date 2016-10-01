@@ -22,4 +22,4 @@ Also, how to "come up with a function that factors out the redundant structure f
 11. How to use try-catch to handle "Exceptions"?
 12. HW9: Is the HuffmanTree wrong? Because when there are only 5 and 4 left in the priority queue, 4 should be in front of 5. Then all the huffman codes should change accordingly.
 13. HW9: Why should all files even saved as string of 0 and 1 have integer multiples of 8 bytes? For example, I can't write a file consisting of only "1" but "10000000"?
-14. HW9: I'm working on a Mac. Why TextEdit and MacVim interpret /n (ASCII = 10) differently (newline in TextEdit, but no newline if it's at the end of the file in MacVim)?
+14. HW9: I'm working on a Mac. Why TextEdit and MacVim interpret /n (ASCII = 10) differently (newline in TextEdit, but no newline if it's at the end of the file in MacVim)
