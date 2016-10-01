@@ -22,7 +22,7 @@ Also, how to "come up with a function that factors out the redundant structure f
 11. How to use try-catch to handle "Exceptions"?
 12. HW9: Is the HuffmanTree wrong? Because when there are only 5 and 4 left in the priority queue, 4 should be in front of 5. Then all the huffman codes should change accordingly.
 13. HW9: Why should all files even saved as string of 0 and 1 have integer multiples of 8 bytes? For example, I can't write a file consisting of only "1" but "10000000"?
-14. HW9: I'm working on a Mac. Why TextEdit and MacVim interpret /n (ASCII = 10) differently (newline in TextEdit, but no newline if it's at the end of the file in MacVim)?
+14. HW9: I'm working on a Mac. Why TextEdit and MacVim interpret /n (ASCII = 10) differently (newline in TextEdit, but no newline if it's at the end of the file in MacVim)
 15. Practice Final solution: Problem 1 (5): why for small arrays, insertion sort is preferrable over quicksort? Or should that be for "almost-sorted arrays"?
 16. Practice Final solution: Problem 4 last cell: why for "A a = new C();", f3() does not type check? I'm not sure if I understand "type checks" mean.
 17. Practice Final solution: Problem 7 B & s.length < ss.size() and C & s.length < ss.size() why should both of them never hold? It seems to me that it can sometimes hold.
